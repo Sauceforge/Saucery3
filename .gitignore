@@ -6,6 +6,8 @@
 dist/
 .vs/
 storage.ide
+*publish*
+*locally*
 
 # mstest test results
 TestResults
