@@ -8,7 +8,7 @@ using Saucery3.Driver;
 using Saucery3.OnDemand;
 
 namespace Saucery3.Tests {
-    [Parallelizable(ParallelScope.Fixtures)]
+    //[Parallelizable(ParallelScope.Fixtures)]
     [TestFixtureSource(typeof(PlatformTestData))]
     public class SauceryAndroidBase : SauceryRoot {
         protected SauceryAndroidDriver Driver;
