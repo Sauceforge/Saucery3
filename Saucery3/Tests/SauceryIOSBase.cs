@@ -8,7 +8,7 @@ using Saucery3.Driver;
 using Saucery3.OnDemand;
 
 namespace Saucery3.Tests {
-    [Parallelizable(ParallelScope.Children)]
+    //[Parallelizable(ParallelScope.Children)]
     [TestFixtureSource(typeof(PlatformTestData))]
     public class SauceryIOSBase : SauceryRoot {
         protected SauceryIOSDriver Driver;

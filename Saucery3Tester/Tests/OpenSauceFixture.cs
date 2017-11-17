@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
 using NUnit.Framework;
 using Saucery3.OnDemand;
 using Saucery3.Tests;
@@ -7,6 +6,7 @@ using Saucery3Tester.PageObjects;
 using Shouldly;
 
 namespace Saucery3Tester.Tests {
+    [Parallelizable(ParallelScope.Children)]
     public class OpenSauceFixture : SauceryBase {
         public OpenSauceFixture(SaucePlatform platform) : base(platform) {
             //Console.WriteLine("In GuineaPigFixture constructor");
