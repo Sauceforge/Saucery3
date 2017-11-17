@@ -9,7 +9,7 @@ using Saucery3.OnDemand;
 using Saucery3.Util;
 
 namespace Saucery3.Tests {
-    //[Parallelizable(ParallelScope.Fixtures)]
+    [Parallelizable(ParallelScope.Children)]
     [TestFixtureSource(typeof(PlatformTestData))]
     public class SauceryBase : SauceryRoot {
         protected SauceryRemoteWebDriver Driver;
