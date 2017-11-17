@@ -10,7 +10,7 @@ namespace UnitTests {
         static RestTests() {
             //Console.WriteLine(@"In RestTests static");
             Environment.SetEnvironmentVariable(SauceryConstants.SAUCE_USER_NAME, SauceryConstants.MY_USERNAME_LOWER);
-            Environment.SetEnvironmentVariable(SauceryConstants.SAUCE_API_KEY, "b5f9d6c8-2ec8-4ea5-a593-74db0184f3b5");
+            Environment.SetEnvironmentVariable(SauceryConstants.SAUCE_API_KEY, "");
         }
 
         [Test]
