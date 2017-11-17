@@ -5,7 +5,7 @@ using Saucery3Tester.PageObjects;
 using Shouldly;
 
 namespace Saucery3Tester.Tests {
-    [Parallelizable(ParallelScope.Children)]
+    //[Parallelizable(ParallelScope.Children)]
     public class OpenSauceFixture2 : SauceryBase {
         public OpenSauceFixture2(SaucePlatform platform) : base(platform) {
             //Console.WriteLine("In GuineaPigFixture2 constructor");
