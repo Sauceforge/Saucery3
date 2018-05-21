@@ -19,7 +19,7 @@ namespace UnitTests.RestAPI.FlowControl {
             //Console.WriteLine(@"Debug: {0}", json);
             var remainingSection = ExtractJsonSegment(json, json.IndexOf("\"remaining", StringComparison.Ordinal), json.Length - 3);
             //Console.WriteLine(@"Debug: remainingsection = {0}", remainingSection);
-            var flowControl = SimpleJson.DeserializeObject<FlowControl>(remainingSection);
+            var flowControl = SimpleJson.SimpleJson.DeserializeObject<FlowControl>(remainingSection);
             //Console.WriteLine(@"Debug: overall = {0}", flowControl.remaining.overall);
             return flowControl.remaining.overall <= 0;
         }
