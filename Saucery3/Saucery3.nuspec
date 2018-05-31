@@ -1,7 +1,7 @@
 ﻿<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Saucery3</id>
-    <version>3.10.1</version>
+    <version>3.10.2</version>
     <title>Saucery 3</title>
     <authors>Full Circle Solutions</authors>
     <owners>Andrew Gray</owners>
