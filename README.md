@@ -1,5 +1,7 @@
 # [Saucery 3](http://www.nuget.org/packages/saucery3) (for NUnit 3)
 
+[![Build Status](https://saucelabs.com/buildstatus/saucefauge)](https://saucelabs.com/beta/builds/8eb1292ba4c145caad0f077871c72f0f)
+
 Previously released NuGet packages are held in a private repository.  This version is driving forward to integrate with NUnit 3.8.1 and later.
 
 As Saucery is highly dependent on NUnit3, bugs in NUnit3 can impact Saucery.  
