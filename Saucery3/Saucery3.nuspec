@@ -1,7 +1,7 @@
 ﻿<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Saucery3</id>
-    <version>3.10.2</version>
+    <version>3.10.3</version>
     <title>Saucery 3</title>
     <authors>Full Circle Solutions</authors>
     <owners>Andrew Gray</owners>
@@ -42,6 +42,8 @@
       - Upgrade to NUnit 3.10.1
       v3.10.2
       - Upgrade to Selenium 3.12.1
+      v3.10.3
+      - Upgrade NuGet packages
     </releaseNotes>
     <summary>Sourcery for SauceLabs - Unlocking SauceLabs capability</summary>
     <projectUrl>https://github.com/Sauceforge/Saucery3</projectUrl>
@@ -54,14 +56,14 @@
     </frameworkAssemblies>
     <dependencies>
       <dependency id="Newtonsoft.Json" version="11.0.2" />
-      <dependency id="RestSharp" version="106.2.2" />
+      <dependency id="RestSharp" version="106.3.1" />
       <dependency id="NUnit" version="3.10.1" />
       <!--<dependency id="NUnit.Console" version="3.6.0" />-->
       <dependency id="NuGet.Core" version="2.14.0" />
-      <dependency id="Selenium.WebDriver" version="3.12.1" />
-      <dependency id="Selenium.Support" version="3.12.1" />
+      <dependency id="Selenium.WebDriver" version="3.13.0" />
+      <dependency id="Selenium.Support" version="3.13.0" />
       <dependency id="Appium.WebDriver" version="3.0.0.2" />
-      <dependency id="Castle.Core" version="4.2.1" />
+      <dependency id="Castle.Core" version="4.3.1" />
       <dependency id="Shouldly" version="3.0.0" />
       <!--<dependency id="NuGet.Core" version="2.14.0" />-->
     </dependencies>
