@@ -14,7 +14,6 @@ namespace Saucery3.Util {
         }
 
         public static void TestingOn(List<SaucePlatform> platforms) {
-            Console.WriteLine("In Testing On");
             OnceOnlyWriter.WriteLine(platforms.Any()
                 ? string.Format(SauceryConstants.TESTING_ON, platforms.Count, GetMoniker(platforms))
                 : SauceryConstants.NO_PLATFORMS);

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
@@ -36,7 +35,6 @@ namespace Saucery3.DataSources {
             //Console.WriteLine("Start static PlatformTestData()");
             //Console.WriteLine(@"After CheckActivation in PlatformTestData");
             Platforms = JsonConvert.DeserializeObject<List<SaucePlatform>>(Enviro.SauceOnDemandBrowsers);
-            //OnceOnlyMessages.TestingOn(Platforms);
         }
 
         public IEnumerator GetEnumerator() {

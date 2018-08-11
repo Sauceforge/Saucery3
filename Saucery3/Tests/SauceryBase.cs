@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using Newtonsoft.Json;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
@@ -17,8 +15,7 @@ namespace Saucery3.Tests {
         protected SauceryRemoteWebDriver Driver;
 
         public SauceryBase(SaucePlatform platform) : base(platform) {
-            OnceOnlyMessages.TestingOn(JsonConvert.DeserializeObject<List<SaucePlatform>>(Enviro.SauceOnDemandBrowsers));
-            OnceOnlyMessages.OnDemand();
+            
         }
 
         public override void InitialiseDriver(DesiredCapabilities caps, int waitSecs) {

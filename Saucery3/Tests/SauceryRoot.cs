@@ -1,10 +1,13 @@
-﻿using NUnit.Framework;
+﻿using Newtonsoft.Json;
+using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using Saucery3.Capabilities;
 using Saucery3.OnDemand;
 using Saucery3.RestAPI.FlowControl;
 using Saucery3.RestAPI.RecommendedAppiumVersion;
 using Saucery3.RestAPI.TestStatus;
+using Saucery3.Util;
+using System.Collections.Generic;
 
 namespace Saucery3.Tests {
     [TestFixture]
@@ -22,7 +25,8 @@ namespace Saucery3.Tests {
         }
 
         static SauceryRoot() {
-            //Console.WriteLine("In SauceryRoot static initialiser");
+            OnceOnlyMessages.TestingOn(JsonConvert.DeserializeObject<List<SaucePlatform>>(Enviro.SauceOnDemandBrowsers));
+            OnceOnlyMessages.OnDemand();
             SauceLabsStatusNotifier = new SauceLabsStatusNotifier();
             SauceLabsFlowController = new SauceLabsFlowController();
         }

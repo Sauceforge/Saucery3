@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using Saucery3.Util;
 
 namespace Saucery3.OnDemand {
     public class SaucePlatform {
@@ -31,9 +30,9 @@ namespace Saucery3.OnDemand {
 
         #region Constructors
 
-        static SaucePlatform() {
-            OnceOnlyMessages.OnDemand();
-        }
+        //static SaucePlatform() {
+        //    //OnceOnlyMessages.OnDemand();
+        //}
 
         public SaucePlatform(string os, string platform, string browser, string browserVersion, string longName,
             string longVersion, string url, string device, string deviceOrientation) {
