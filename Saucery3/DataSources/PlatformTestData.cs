@@ -35,8 +35,8 @@ namespace Saucery3.DataSources {
             //Console.WriteLine("Start static PlatformTestData()");
             //Console.WriteLine(@"After CheckActivation in PlatformTestData");
             Platforms = JsonConvert.DeserializeObject<List<SaucePlatform>>(Enviro.SauceOnDemandBrowsers);
-            OnceOnlyMessages.TestingOn(Platforms);
-            OnceOnlyMessages.OnDemand();
+            //OnceOnlyMessages.TestingOn(Platforms);
+            //OnceOnlyMessages.OnDemand();
         }
 
         public IEnumerator GetEnumerator() {
