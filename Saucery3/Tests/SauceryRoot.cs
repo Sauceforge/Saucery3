@@ -13,11 +13,12 @@ namespace Saucery3.Tests {
     [TestFixture]
     //[Parallelizable(ParallelScope.Fixtures)]
     public abstract class SauceryRoot {
-        protected static SauceLabsAppiumRecommender SauceLabsAppiumRecommender;
         protected string TestName;
         protected readonly SaucePlatform Platform;
         protected static SauceLabsStatusNotifier SauceLabsStatusNotifier;
         internal static SauceLabsFlowController SauceLabsFlowController;
+        protected static SauceLabsAppiumRecommender SauceLabsAppiumRecommender;
+
 
         protected SauceryRoot(SaucePlatform platform) {
             //Console.WriteLine(@"In SauceryRoot constructor");

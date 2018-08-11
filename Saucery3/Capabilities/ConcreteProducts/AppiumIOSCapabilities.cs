@@ -11,6 +11,10 @@ namespace Saucery3.Capabilities.ConcreteProducts {
             //Console.WriteLine(SauceryConstants.SETTING_UP_APPIUM, testName, SauceryConstants.IOS_ON_APPIUM, Enviro.RecommendedAppiumVersion);
             Console.WriteLine(SauceryConstants.SETTING_UP, testName, SauceryConstants.IOS_ON_APPIUM);
             Caps = platform.IsAnIPhone() ? DesiredCapabilities.IPhone() : DesiredCapabilities.IPad();
+
+            //See https://github.com/appium/appium-dotnet-driver/wiki/Android-Sample
+            //IOSDriver<AppiumWebElement> iosd = new IOSDriver<AppiumWebElement>(Caps);
+
             //Caps.SetCapability(SauceryConstants.SAUCE_APPIUM_VERSION_CAPABILITY, Enviro.RecommendedAppiumVersion);
             Caps.SetCapability(SauceryConstants.SAUCE_BROWSER_NAME_CAPABILITY, GetBrowser(nativeApp));
             Caps.SetCapability(SauceryConstants.SAUCE_PLATFORM_VERSION_CAPABILITY, platform.BrowserVersion);

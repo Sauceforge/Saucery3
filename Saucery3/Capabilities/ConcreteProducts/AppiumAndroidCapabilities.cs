@@ -1,4 +1,6 @@
 ﻿using System;
+using OpenQA.Selenium.Appium;
+using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Remote;
 using Saucery3.Capabilities.Base;
 using Saucery3.OnDemand;
@@ -14,6 +16,10 @@ namespace Saucery3.Capabilities.ConcreteProducts {
             //Console.WriteLine(SauceryConstants.SETTING_UP_APPIUM, testName, SauceryConstants.ANDROID_ON_APPIUM, Enviro.RecommendedAppiumVersion);
             Console.WriteLine(SauceryConstants.SETTING_UP, testName, SauceryConstants.ANDROID_ON_APPIUM);
             Caps = DesiredCapabilities.Android();
+
+            //See https://github.com/appium/appium-dotnet-driver/wiki/Android-Sample
+            //AndroidDriver<AppiumWebElement> ad = new AndroidDriver<AppiumWebElement>(Caps);
+
             Caps.SetCapability(SauceryConstants.SAUCE_BROWSER_NAME_CAPABILITY, GetBrowser(nativeApp, useChromeOnAndroid));
             Caps.SetCapability(SauceryConstants.SAUCE_PLATFORM_VERSION_CAPABILITY, platform.LongVersion);
             //Caps.SetCapability(SauceryConstants.SAUCE_APPIUM_VERSION_CAPABILITY, Enviro.RecommendedAppiumVersion);
