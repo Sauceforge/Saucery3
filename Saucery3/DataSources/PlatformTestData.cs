@@ -31,12 +31,13 @@ namespace Saucery3.DataSources {
 
         #endregion
 
-        //static PlatformTestData() {
-        //    //Console.WriteLine("Start static PlatformTestData()");
-        //    //Console.WriteLine(@"After CheckActivation in PlatformTestData");
-        //    Platforms = JsonConvert.DeserializeObject<List<SaucePlatform>>(Enviro.SauceOnDemandBrowsers);
-        //    OnceOnlyMessages.TestingOn(Platforms);
-        //}
+        static PlatformTestData()
+        {
+            //Console.WriteLine("Start static PlatformTestData()");
+            //Console.WriteLine(@"After CheckActivation in PlatformTestData");
+            Platforms = JsonConvert.DeserializeObject<List<SaucePlatform>>(Enviro.SauceOnDemandBrowsers);
+            OnceOnlyMessages.TestingOn(Platforms);
+        }
 
         public IEnumerator GetEnumerator() {
             return Platforms?.Select(platform => new SaucePlatform(Sanitiser.SanitisePlatformField(platform.Os),
