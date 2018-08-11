@@ -32,9 +32,7 @@ namespace Saucery3.OnDemand {
         #region Constructors
 
         static SaucePlatform() {
-            if (UserChecker.ItIsMe()) {
-                OnceOnlyMessages.OnDemand();
-            }
+            OnceOnlyMessages.OnDemand();
         }
 
         public SaucePlatform(string os, string platform, string browser, string browserVersion, string longName,

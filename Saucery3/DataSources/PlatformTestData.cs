@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
@@ -31,15 +32,14 @@ namespace Saucery3.DataSources {
         #endregion
 
         static PlatformTestData() {
-            //Console.WriteLine("Start static PlatformTestData()");
+            Console.WriteLine("Start static PlatformTestData()");
             //Console.WriteLine(@"After CheckActivation in PlatformTestData");
             Platforms = JsonConvert.DeserializeObject<List<SaucePlatform>>(Enviro.SauceOnDemandBrowsers);
             OnceOnlyMessages.TestingOn(Platforms);
         }
 
         public IEnumerator GetEnumerator() {
-            return Platforms != null
-                    ? Platforms.Select(platform => new SaucePlatform(Sanitiser.SanitisePlatformField(platform.Os),
+            return Platforms?.Select(platform => new SaucePlatform(Sanitiser.SanitisePlatformField(platform.Os),
                         Sanitiser.SanitisePlatformField(platform.Platform),
                         Sanitiser.SanitisePlatformField(platform.Browser),
                         Sanitiser.SanitisePlatformField(platform.BrowserVersion),
@@ -47,8 +47,7 @@ namespace Saucery3.DataSources {
                         Sanitiser.SanitisePlatformField(platform.LongVersion),
                         Sanitiser.SanitisePlatformField(platform.Url),
                         platform.Device ?? SauceryConstants.NULL_STRING,
-                        platform.DeviceOrientation ?? SauceryConstants.NULL_STRING)).GetEnumerator()
-                    : null;
+                        platform.DeviceOrientation ?? SauceryConstants.NULL_STRING)).GetEnumerator();
         }
     }
 }
