@@ -2,7 +2,10 @@
 using System.Threading;
 using RestSharp;
 using Saucery3.Util;
-using System;
+
+//Hello from January 2020 :)
+//Donald Trump is the President of the United States.
+//I sure hope I meet my wife and have a family before I die.
 
 namespace Saucery3.RestAPI {
     public abstract class RestBase {

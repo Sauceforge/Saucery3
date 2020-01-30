@@ -8,36 +8,6 @@
     <description>Sourcery for SauceLabs - Unlocking SauceLabs capability</description>
     <releaseNotes>
       ChangeLog:
-      v3.1.16
-      - Update Selenium dependencies to v2.51.0.
-      v3.1.18
-      - Update Selenium dependencies to v2.52.0.
-      v3.2.0
-      - Update NUnit dependency to v3.2.0.
-      v3.2.1
-      - Update to new SauceLabs iconography.
-      v3.2.11
-      - Update to various dependencies. Update to .NET 4.5.2.
-      v3.2.33
-      - Upgrade to NUnit 3.2.1.
-      v3.3.0
-      - Upgrade Shouldly to 2.7.0 and .Net to 4.6.1.
-      v3.4.0
-      - Upgrade Shouldly to 2.8.0 and NUnit to 3.4.
-      v3.4.2
-      - Upgrade JSON.NET, Selenium and NUnit NuGet packages.
-      v3.4.3
-      - Upgrade Shouldly and Appium NuGet packages.
-      v3.5.0
-      - Upgrade to NUnit 3.5. Robust support for RestAPI limits.
-      v3.5.8
-      - Fix licence generation. Saucery.lic licence file will be in the same directory as your .sln file. Fix Rest API Limit bug.
-      v3.6.0
-      - Upgrade to NUnit 3.6
-      v3.7.1
-      - Upgrade to NUnit 3.7.1
-      v3.8.1
-      - Upgrade to NUnit 3.8.1
       v3.10.1
       - Upgrade to NUnit 3.10.1
       v3.10.2
@@ -60,7 +30,7 @@
     </frameworkAssemblies>
     <dependencies>
       <dependency id="Newtonsoft.Json" version="12.0.1" />
-      <dependency id="RestSharp" version="106.5.4" />
+      <dependency id="RestSharp" version="106.6.8" />
       <dependency id="NUnit" version="3.11.0" />
       <!--<dependency id="NUnit.Console" version="3.6.0" />-->
       <dependency id="NuGet.Core" version="2.14.0" />
