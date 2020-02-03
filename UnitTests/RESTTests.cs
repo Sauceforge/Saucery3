@@ -29,7 +29,7 @@ namespace UnitTests {
             var components = version.Split('.');
             components.Length.ShouldBe(3);
             components[0].ShouldBeGreaterThanOrEqualTo("1");
-            components[1].ShouldBeGreaterThanOrEqualTo("6");
+            components[1].ShouldBeGreaterThanOrEqualTo("15");
             components[2].ShouldBeGreaterThanOrEqualTo("0");
         }
     }
