@@ -61,6 +61,7 @@ namespace Saucery3.Options.ConcreteProducts {
 
         private ChromeOptions CreateChromeOptions(SaucePlatform platform)
         {
+            Console.WriteLine("Creating Chrome Options");
             var o = new ChromeOptions() 
             {
                 PlatformName = platform.Os,
@@ -73,6 +74,7 @@ namespace Saucery3.Options.ConcreteProducts {
 
         private FirefoxOptions CreateFirefoxOptions(SaucePlatform platform)
         {
+            Console.WriteLine("Creating Firefox Options");
             var o = new FirefoxOptions
             {
                 PlatformName = platform.Os,
@@ -84,6 +86,7 @@ namespace Saucery3.Options.ConcreteProducts {
 
         private SafariOptions CreateSafariOptions(SaucePlatform platform)
         {
+            Console.WriteLine("Creating Safari Options");
             var o = new SafariOptions
             {
                 PlatformName = platform.Os,
@@ -95,6 +98,7 @@ namespace Saucery3.Options.ConcreteProducts {
 
         private InternetExplorerOptions CreateInternetExplorerOptions(SaucePlatform platform)
         {
+            Console.WriteLine("Creating IE Options");
             var o = new InternetExplorerOptions
             {
                 PlatformName = platform.Os,
@@ -106,6 +110,7 @@ namespace Saucery3.Options.ConcreteProducts {
 
         private EdgeOptions CreateEdgeOptions(SaucePlatform platform)
         {
+            Console.WriteLine("Creating Edge Options");
             var o = new EdgeOptions
             {
                 PlatformName = platform.Os,
