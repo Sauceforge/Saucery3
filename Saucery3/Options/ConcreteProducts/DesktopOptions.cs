@@ -18,57 +18,70 @@ namespace Saucery3.Options.ConcreteProducts {
 
             //This section needs to be another factory.
             Opts = platform.Browser.ToLower().Equals("chrome")
-                    ? CreateChromeOptions()
+                    ? CreateChromeOptions(platform)
                     : platform.Browser.ToLower().Equals("firefox")
-                        ? CreateFirefoxOptions()
+                        ? CreateFirefoxOptions(platform)
                         : platform.Browser.ToLower().Equals("safari")
-                            ? CreateSafariOptions()
+                            ? CreateSafariOptions(platform)
                             : platform.Browser.ToLower().Equals("internetexplorer")
-                                ? CreateInternetExplorerOptions()
+                                ? CreateInternetExplorerOptions(platform)
                                 : platform.Browser.ToLower().Equals("msedge")
-                                    ? CreateEdgeOptions()
-                                    : (DriverOptions) CreateChromeOptions();
-            
-            Opts.PlatformName = platform.Os;
-            Opts.BrowserVersion = platform.BrowserVersion;
-
-            //Opts.AddAdditionalCapability(SauceryConstants.SAUCE_USERNAME_CAPABILITY, Enviro.SauceUserName);
-            //Opts.AddAdditionalCapability(SauceryConstants.SAUCE_ACCESSKEY_CAPABILITY, Enviro.SauceApiKey);
-            
-            //Opts.AddAdditionalCapability("sauce:options", SauceOptions);
+                                    ? CreateEdgeOptions(platform)
+                                    : (DriverOptions) CreateChromeOptions(platform);
         }
 
-        private ChromeOptions CreateChromeOptions()
+        private ChromeOptions CreateChromeOptions(SaucePlatform platform)
         {
-            var o = new ChromeOptions() { UseSpecCompliantProtocol = true };
+            var o = new ChromeOptions() 
+            {
+                PlatformName = platform.Os,
+                BrowserVersion = platform.BrowserVersion,
+                UseSpecCompliantProtocol = true 
+            };
             o.AddAdditionalCapability("sauce:options", SauceOptions, true);
             return o;
         }
 
-        private FirefoxOptions CreateFirefoxOptions()
+        private FirefoxOptions CreateFirefoxOptions(SaucePlatform platform)
         {
-            var o = new FirefoxOptions();
+            var o = new FirefoxOptions
+            {
+                PlatformName = platform.Os,
+                BrowserVersion = platform.BrowserVersion
+            };
             o.AddAdditionalCapability("sauce:options", SauceOptions, true);
             return o;
         }
 
-        private SafariOptions CreateSafariOptions()
+        private SafariOptions CreateSafariOptions(SaucePlatform platform)
         {
-            var o = new SafariOptions();
+            var o = new SafariOptions
+            {
+                PlatformName = platform.Os,
+                BrowserVersion = platform.BrowserVersion
+            };
             o.AddAdditionalCapability("sauce:options", SauceOptions);
             return o;
         }
 
-        private InternetExplorerOptions CreateInternetExplorerOptions()
+        private InternetExplorerOptions CreateInternetExplorerOptions(SaucePlatform platform)
         {
-            var o = new InternetExplorerOptions();
+            var o = new InternetExplorerOptions
+            {
+                PlatformName = platform.Os,
+                BrowserVersion = platform.BrowserVersion
+            };
             o.AddAdditionalCapability("sauce:options", SauceOptions, true);
             return o;
         }
 
-        private EdgeOptions CreateEdgeOptions()
+        private EdgeOptions CreateEdgeOptions(SaucePlatform platform)
         {
-            var o = new EdgeOptions();
+            var o = new EdgeOptions
+            {
+                PlatformName = platform.Os,
+                BrowserVersion = platform.BrowserVersion
+            };
             o.AddAdditionalCapability("sauce:options", SauceOptions);
             return o;
         }
