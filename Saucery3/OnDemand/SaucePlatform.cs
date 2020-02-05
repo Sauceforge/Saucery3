@@ -59,7 +59,7 @@ namespace Saucery3.OnDemand {
     }
 }
 /*
- * Copyright Andrew Gray, Full Circle Solutions
+ * Copyright Andrew Gray, SauceForge
  * Date: 12th July 2014
  * 
  */

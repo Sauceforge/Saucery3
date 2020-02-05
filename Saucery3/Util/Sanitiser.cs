@@ -12,7 +12,7 @@
     }
 }
 /*
- * Copyright Andrew Gray, Full Circle Solutions
+ * Copyright Andrew Gray, SauceForge
  * Date: 12th August 2014
  * 
  */

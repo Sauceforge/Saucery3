@@ -41,7 +41,7 @@ namespace Saucery3.Driver {
     }
 }
 /*
- * Copyright Andrew Gray, Full Circle Solutions
+ * Copyright Andrew Gray, SauceForge
  * Date: 1st August 2014
  * 
  */

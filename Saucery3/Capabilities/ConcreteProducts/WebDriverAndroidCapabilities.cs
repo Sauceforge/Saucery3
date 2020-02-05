@@ -25,7 +25,7 @@ namespace Saucery3.Capabilities.ConcreteProducts {
     }
 }
 /*
- * Copyright Andrew Gray, Full Circle Solutions
+ * Copyright Andrew Gray, SauceForge
  * Date: 10th September 2014
  * 
  */

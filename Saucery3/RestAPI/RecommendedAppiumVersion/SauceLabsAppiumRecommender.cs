@@ -16,7 +16,7 @@ namespace Saucery3.RestAPI.RecommendedAppiumVersion
 }
 
 /*
- * Copyright Andrew Gray, Full Circle Solutions
+ * Copyright Andrew Gray, SauceForge
  * Date: 10th August 2014
  * 
  */

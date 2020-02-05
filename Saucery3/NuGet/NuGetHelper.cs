@@ -45,7 +45,7 @@ namespace Saucery3.NuGet {
     }
 }
 /*
- * Copyright Andrew Gray, Full Circle Solutions
+ * Copyright Andrew Gray, SauceForge
  * Date: 24th December 2015
  * 
  */

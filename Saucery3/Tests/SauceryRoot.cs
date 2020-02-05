@@ -1,15 +1,17 @@
 ﻿using Newtonsoft.Json;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
-using Saucery3.Capabilities;
 using Saucery3.OnDemand;
+using Saucery3.Options;
 using Saucery3.RestAPI.FlowControl;
 using Saucery3.RestAPI.RecommendedAppiumVersion;
 using Saucery3.RestAPI.TestStatus;
 using Saucery3.Util;
 using System.Collections.Generic;
 
-namespace Saucery3.Tests {
+namespace Saucery3.Tests
+{
     [TestFixture]
     //[Parallelizable(ParallelScope.Fixtures)]
     public abstract class SauceryRoot {
@@ -39,15 +41,16 @@ namespace Saucery3.Tests {
 
             //DebugMessages.PrintPlatformDetails(platform);
             // set up the desired capabilities
-            var caps = CapabilityFactory.CreateCapabilities(Platform, TestName);
-            InitialiseDriver(caps, 30);
+            var opts = OptionFactory.CreateOptions(Platform, TestName);
+            InitialiseDriver(opts, 30);
         }
 
-        public abstract void InitialiseDriver(DesiredCapabilities caps, int waitSecs);
+        public abstract void InitialiseDriver(DriverOptions opts, int waitSecs);
+        public abstract void InitialiseDriver(ICapabilities driver, int waitSecs);
     }
 }
 /*
- * Copyright Andrew Gray, Full Circle Solutions
+ * Copyright Andrew Gray, SauceForge
  * Date: 12th July 2014
  * 
  */

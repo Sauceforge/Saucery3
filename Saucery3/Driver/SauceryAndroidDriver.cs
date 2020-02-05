@@ -1,25 +1,31 @@
 ﻿using System;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Appium;
+using OpenQA.Selenium.Appium.Android;
+using OpenQA.Selenium.Remote;
 using Saucery3.Util;
 
 namespace Saucery3.Driver {
-    public class SauceryAndroidDriver : AppiumDriver<AppiumWebElement> {
-        public SauceryAndroidDriver(ICapabilities desiredCapabilities)
-            : base(new Uri(SauceryConstants.SAUCELABS_HUB), desiredCapabilities) {
+    public class SauceryAndroidDriver : AndroidDriver<IWebElement> {
+        public SauceryAndroidDriver(DriverOptions options)
+            : base(new Uri(SauceryConstants.SAUCELABS_HUB), options) {
         }
 
-        public SauceryAndroidDriver(Uri remoteAddress, ICapabilities desiredCapabilities)
-            : base(remoteAddress, desiredCapabilities, TimeSpan.FromSeconds(400)) {
+        public SauceryAndroidDriver(Uri remoteAddress, DriverOptions options)
+            : base(remoteAddress, options, TimeSpan.FromSeconds(400)) {
         }
 
         public string GetSessionId() {
             return SessionId.ToString();
         }
 
-        public override void Swipe(int startx, int starty, int endx, int endy, int duration) {
+        protected override RemoteWebElementFactory CreateElementFactory()
+        {
             throw new NotImplementedException();
         }
+
+        //public override void Swipe(int startx, int starty, int endx, int endy, int duration) {
+        //    throw new NotImplementedException();
+        //}
 
         //public override AppiumWebElement ScrollTo(string text) {
         //    throw new NotImplementedException();
@@ -32,7 +38,7 @@ namespace Saucery3.Driver {
 }
 
 /*
- * Copyright Andrew Gray, Full Circle Solutions
+ * Copyright Andrew Gray, SauceForge
  * Date: 12th July 2014
  * 
  */

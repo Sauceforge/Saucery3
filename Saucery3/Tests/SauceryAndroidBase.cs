@@ -2,7 +2,6 @@
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Remote;
 using Saucery3.DataSources;
 using Saucery3.Driver;
 using Saucery3.OnDemand;
@@ -16,9 +15,9 @@ namespace Saucery3.Tests {
         public SauceryAndroidBase(SaucePlatform platform) : base(platform) {
         }
         
-        public override void InitialiseDriver(DesiredCapabilities caps, int waitSecs) {
+        public override void InitialiseDriver(DriverOptions options, int waitSecs) {
             try {
-                Driver = new SauceryAndroidDriver(caps);
+                Driver = new SauceryAndroidDriver(options);
                 Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(waitSecs);
             } catch(Exception ex) {
                 Console.WriteLine(ex.Message);
@@ -45,10 +44,15 @@ namespace Saucery3.Tests {
                 Driver.Quit();
             }
         }
+
+        public override void InitialiseDriver(ICapabilities driver, int waitSecs)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 /*
- * Copyright Andrew Gray, Full Circle Solutions
+ * Copyright Andrew Gray, SauceForge
  * Date: 12th July 2014
  * 
  */

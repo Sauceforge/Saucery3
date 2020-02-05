@@ -21,6 +21,6 @@ $validator = New-Object $validatorClass
 $validator.CheckActivation()
 
 #
-# Copyright Andrew Gray, Full Circle Solutions
+# Copyright Andrew Gray, SauceForge
 # Date: 12th November 2016
 # 

@@ -3,8 +3,8 @@ using System.Text;
 using Saucery3.OnDemand;
 using Saucery3.Util;
 
-namespace Saucery3.Capabilities {
-    internal static class CapabilityExtensions {
+namespace Saucery3.Options {
+    internal static class OptionExtensions {
         public static bool CanUseAppium(this SaucePlatform platform) {
             return (IsAnAppleDevice(platform) &&
                     platform.ParseBrowserVersion() >= SauceryConstants.APPIUM_IOS_MINIMUM_VERSION) ||
@@ -67,6 +67,6 @@ namespace Saucery3.Capabilities {
 }
 /*
  * Copyright Andrew Gray, SauceForge
- * Date: 18th September 2014
+ * Date: 5th February 2020
  * 
  */

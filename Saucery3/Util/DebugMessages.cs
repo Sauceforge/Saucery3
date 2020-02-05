@@ -28,7 +28,7 @@ namespace Saucery3.Util {
 }
 
 /*
- * Copyright Andrew Gray, Full Circle Solutions
+ * Copyright Andrew Gray, SauceForge
  * Date: 25th August 2014
  * 
  */
