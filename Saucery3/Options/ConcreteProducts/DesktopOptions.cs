@@ -16,29 +16,61 @@ namespace Saucery3.Options.ConcreteProducts {
         {
             Console.WriteLine(SauceryConstants.SETTING_UP, testName, SauceryConstants.DESKTOP_ON_WEBDRIVER);
 
+            //This section needs to be another factory.
             Opts = platform.Browser.ToLower().Equals("chrome")
-                    ? new ChromeOptions()
+                    ? CreateChromeOptions()
                     : platform.Browser.ToLower().Equals("firefox")
-                        ? new FirefoxOptions()
+                        ? CreateFirefoxOptions()
                         : platform.Browser.ToLower().Equals("safari")
-                            ? new SafariOptions()
+                            ? CreateSafariOptions()
                             : platform.Browser.ToLower().Equals("internetexplorer")
-                                ? new InternetExplorerOptions()
+                                ? CreateInternetExplorerOptions()
                                 : platform.Browser.ToLower().Equals("msedge")
-                                    ? new EdgeOptions()
-                                    : (DriverOptions) new ChromeOptions();
-
-            //if (platform.Browser.ToLower().Equals("chrome"))
-            //{
-            //    Opts.UseSpecCompliantProtocol = true;
-            //}
+                                    ? CreateEdgeOptions()
+                                    : (DriverOptions) CreateChromeOptions();
+            
             Opts.PlatformName = platform.Os;
             Opts.BrowserVersion = platform.BrowserVersion;
 
-            Opts.AddAdditionalCapability(SauceryConstants.SAUCE_USERNAME_CAPABILITY, Enviro.SauceUserName);
-            Opts.AddAdditionalCapability(SauceryConstants.SAUCE_ACCESSKEY_CAPABILITY, Enviro.SauceApiKey);
+            //Opts.AddAdditionalCapability(SauceryConstants.SAUCE_USERNAME_CAPABILITY, Enviro.SauceUserName);
+            //Opts.AddAdditionalCapability(SauceryConstants.SAUCE_ACCESSKEY_CAPABILITY, Enviro.SauceApiKey);
             
             Opts.AddAdditionalCapability("sauce:options", SauceOptions);
+        }
+
+        private ChromeOptions CreateChromeOptions()
+        {
+            var o = new ChromeOptions() { UseSpecCompliantProtocol = true };
+            o.AddAdditionalCapability("sauce:options", SauceOptions, true);
+            return o;
+        }
+
+        private FirefoxOptions CreateFirefoxOptions()
+        {
+            var o = new FirefoxOptions();
+            o.AddAdditionalCapability("sauce:options", SauceOptions, true);
+            return o;
+        }
+
+        private SafariOptions CreateSafariOptions()
+        {
+            var o = new SafariOptions();
+            o.AddAdditionalCapability("sauce:options", SauceOptions);
+            return o;
+        }
+
+        private InternetExplorerOptions CreateInternetExplorerOptions()
+        {
+            var o = new InternetExplorerOptions();
+            o.AddAdditionalCapability("sauce:options", SauceOptions, true);
+            return o;
+        }
+
+        private EdgeOptions CreateEdgeOptions()
+        {
+            var o = new EdgeOptions();
+            o.AddAdditionalCapability("sauce:options", SauceOptions);
+            return o;
         }
     }
 }
