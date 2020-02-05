@@ -35,7 +35,7 @@ namespace Saucery3.Options.ConcreteProducts {
             //Opts.AddAdditionalCapability(SauceryConstants.SAUCE_USERNAME_CAPABILITY, Enviro.SauceUserName);
             //Opts.AddAdditionalCapability(SauceryConstants.SAUCE_ACCESSKEY_CAPABILITY, Enviro.SauceApiKey);
             
-            Opts.AddAdditionalCapability("sauce:options", SauceOptions);
+            //Opts.AddAdditionalCapability("sauce:options", SauceOptions);
         }
 
         private ChromeOptions CreateChromeOptions()
