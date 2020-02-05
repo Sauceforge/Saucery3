@@ -39,13 +39,13 @@ namespace Saucery3.Options.ConcreteProducts {
                     }
                     else
                     {
-                        if (platform.Browser.ToLower().Contains("internetexplorer"))
+                        if (platform.Browser.ToLower().Contains("internet explorer"))
                         {
                             Opts = CreateInternetExplorerOptions(platform);
                         }
                         else
                         {
-                            if (platform.Browser.ToLower().Contains("msedge"))
+                            if (platform.Browser.ToLower().Contains("MicrosoftEdge"))
                             {
                                 Opts = CreateEdgeOptions(platform);
                             }
