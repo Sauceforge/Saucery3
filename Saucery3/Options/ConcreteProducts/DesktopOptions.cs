@@ -16,18 +16,47 @@ namespace Saucery3.Options.ConcreteProducts {
         {
             Console.WriteLine(SauceryConstants.SETTING_UP, testName, SauceryConstants.DESKTOP_ON_WEBDRIVER);
 
+            Console.WriteLine("platform.Browser: {0}", platform.Browser);
+            Console.WriteLine("platform.Os: {0}", platform.Os);
+            Console.WriteLine("platform.BrowserVersion: {0}", platform.BrowserVersion);
             //This section needs to be another factory.
-            Opts = platform.Browser.ToLower().Equals("chrome")
-                    ? CreateChromeOptions(platform)
-                    : platform.Browser.ToLower().Equals("firefox")
-                        ? CreateFirefoxOptions(platform)
-                        : platform.Browser.ToLower().Equals("safari")
-                            ? CreateSafariOptions(platform)
-                            : platform.Browser.ToLower().Equals("internetexplorer")
-                                ? CreateInternetExplorerOptions(platform)
-                                : platform.Browser.ToLower().Equals("msedge")
-                                    ? CreateEdgeOptions(platform)
-                                    : (DriverOptions) CreateChromeOptions(platform);
+
+            if (platform.Browser.ToLower().Contains("chrome"))
+            {
+                Opts = CreateChromeOptions(platform);
+            }
+            else
+            {
+                if (platform.Browser.ToLower().Contains("firefox"))
+                {
+                    Opts = CreateFirefoxOptions(platform);
+                }
+                else
+                {
+                    if (platform.Browser.ToLower().Contains("safari"))
+                    {
+                        Opts = CreateSafariOptions(platform);
+                    }
+                    else
+                    {
+                        if (platform.Browser.ToLower().Contains("internetexplorer"))
+                        {
+                            Opts = CreateInternetExplorerOptions(platform);
+                        }
+                        else
+                        {
+                            if (platform.Browser.ToLower().Contains("msedge"))
+                            {
+                                Opts = CreateEdgeOptions(platform);
+                            }
+                            else
+                            {
+                                Opts = CreateChromeOptions(platform);
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         private ChromeOptions CreateChromeOptions(SaucePlatform platform)
