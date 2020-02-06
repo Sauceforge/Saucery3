@@ -84,10 +84,9 @@
         internal const string SAMSUNG = "Samsung";
         internal const string APPLE_IPHONE = "iphone";
         internal const string APPLE_IPAD = "ipad";
-        internal const string ANDROID = "android";
+        internal const string ANDROID = "Android";
         internal const string SAFARI_BROWSER = "Safari";
-        internal const string CHROME_BROWSER = "chrome";
-        internal const string DEFAULT_ANDROID_BROWSER = "browser";
+        internal const string CHROME_BROWSER = "Chrome";
         internal const string IPAD_SIMULATOR = "iPad Simulator";
         internal const string IPHONE_SIMULATOR = "iPhone Simulator";
         internal const string IPAD_DEVICE = "iPad";
@@ -98,6 +97,7 @@
         internal const string PASSED = "passed";
         internal const string FAILED = "failed";
         internal const string NULL_STRING = "null";
+        internal const string DOT = ".";
         internal const string SPACE = " ";
         internal const string TWO_SPACES = "  ";
         internal const string ASTERIX = "*";

@@ -34,14 +34,6 @@ namespace Saucery3.Capabilities.Base
             return Caps;
         }
 
-        protected static string GetBrowser(string nativeApp, bool useChromeOnAndroid) {
-            return nativeApp != null
-                ? ""
-                : useChromeOnAndroid
-                    ? SauceryConstants.CHROME_BROWSER
-                    : SauceryConstants.DEFAULT_ANDROID_BROWSER;
-        }
-
         protected static string GetBrowser(string nativeApp) {
             return nativeApp != null ? "" : SauceryConstants.SAFARI_BROWSER;
         }
