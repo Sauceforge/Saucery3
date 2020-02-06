@@ -26,7 +26,14 @@ namespace Saucery3.Capabilities.ConcreteProducts {
             Caps.SetCapability(SauceryConstants.SAUCE_BROWSER_NAME_CAPABILITY, GetBrowser(nativeApp, useChromeOnAndroid));
             Caps.SetCapability(SauceryConstants.SAUCE_PLATFORM_VERSION_CAPABILITY, platform.LongVersion);
             Caps.SetCapability(SauceryConstants.SAUCE_PLATFORM_NAME_CAPABILITY, SauceryConstants.ANDROID);
-            
+
+            Console.WriteLine("{0}:{1} {2}:{3} {4}:{5} {6}:{7} {8}:{9}",
+                              SauceryConstants.SAUCE_DEVICE_NAME_CAPABILITY, platform.LongName,
+                              SauceryConstants.SAUCE_DEVICE_ORIENTATION_CAPABILITY, platform.DeviceOrientation,
+                              SauceryConstants.SAUCE_BROWSER_NAME_CAPABILITY, GetBrowser(nativeApp, useChromeOnAndroid),
+                              SauceryConstants.SAUCE_PLATFORM_VERSION_CAPABILITY, platform.LongVersion,
+                              SauceryConstants.SAUCE_PLATFORM_NAME_CAPABILITY, SauceryConstants.ANDROID);
+
             AddSauceLabsCapabilities(nativeApp);
         }
     }
