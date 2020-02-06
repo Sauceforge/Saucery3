@@ -13,20 +13,20 @@ namespace Saucery3.Capabilities.ConcreteProducts {
         {
             var nativeApp = Enviro.SauceNativeApp;
             var useChromeOnAndroid = Enviro.SauceUseChromeOnAndroid;
-            //Console.WriteLine(SauceryConstants.SETTING_UP_APPIUM, testName, SauceryConstants.ANDROID_ON_APPIUM, Enviro.RecommendedAppiumVersion);
             Console.WriteLine(SauceryConstants.SETTING_UP, testName, SauceryConstants.ANDROID_ON_APPIUM);
-            Caps = DesiredCapabilities.Android();
+            //Caps = DesiredCapabilities.Android();
+            Caps = new DesiredCapabilities();
 
             //See https://github.com/appium/appium-dotnet-driver/wiki/Android-Sample
             //AndroidDriver<AppiumWebElement> ad = new AndroidDriver<AppiumWebElement>(Caps);
 
-            Caps.SetCapability(SauceryConstants.SAUCE_BROWSER_NAME_CAPABILITY, GetBrowser(nativeApp, useChromeOnAndroid));
-            Caps.SetCapability(SauceryConstants.SAUCE_PLATFORM_VERSION_CAPABILITY, platform.LongVersion);
             //Caps.SetCapability(SauceryConstants.SAUCE_APPIUM_VERSION_CAPABILITY, Enviro.RecommendedAppiumVersion);
-            Caps.SetCapability(SauceryConstants.SAUCE_PLATFORM_NAME_CAPABILITY, SauceryConstants.ANDROID);
             Caps.SetCapability(SauceryConstants.SAUCE_DEVICE_NAME_CAPABILITY, platform.LongName);
             Caps.SetCapability(SauceryConstants.SAUCE_DEVICE_ORIENTATION_CAPABILITY, platform.DeviceOrientation);
-
+            Caps.SetCapability(SauceryConstants.SAUCE_BROWSER_NAME_CAPABILITY, GetBrowser(nativeApp, useChromeOnAndroid));
+            Caps.SetCapability(SauceryConstants.SAUCE_PLATFORM_VERSION_CAPABILITY, platform.LongVersion);
+            Caps.SetCapability(SauceryConstants.SAUCE_PLATFORM_NAME_CAPABILITY, SauceryConstants.ANDROID);
+            
             AddSauceLabsCapabilities(nativeApp);
         }
     }
