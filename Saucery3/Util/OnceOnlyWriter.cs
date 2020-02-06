@@ -179,7 +179,7 @@ namespace Saucery3.Util {
 }
 
 /*
- * Author: Andrew Gray, Full Circle Solutions
+ * Author: Andrew Gray, SauceForge
  * Date: 17th December 2015
  * 
  */

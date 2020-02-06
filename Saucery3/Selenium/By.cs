@@ -112,7 +112,7 @@ namespace Saucery3.Selenium {
     }
 }
 /*
- * Copyright Andrew Gray, Full Circle Solutions
+ * Copyright Andrew Gray, SauceForge
  * Date: 27th July 2014
  * 
  */

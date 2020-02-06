@@ -134,7 +134,7 @@ namespace Saucery3.PageObjects {
     }
 }
 /*
- * Copyright Andrew Gray, Full Circle Solutions
+ * Copyright Andrew Gray, SauceForge
  * Date: 17th July 2014
  * 
  */

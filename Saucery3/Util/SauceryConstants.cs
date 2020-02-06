@@ -3,7 +3,7 @@
         //ACTIVATION DETAILS
         internal const string MY_USERNAME = "saucefauge";
         internal static readonly string MY_USERNAME_LOWER = MY_USERNAME.ToLower();
-        internal const string COMPANYNAME = "Full Circle Solutions";
+        internal const string COMPANYNAME = "SauceForge";
         internal const string EDITION = "Enterprise";
         internal const string KEYNAME = "SauceryKey";
         internal const string REGISTRYROOT = @"SOFTWARE\" + COMPANYNAME + BACKSLASH;
@@ -41,7 +41,7 @@
         internal const string SAUCE_VERSION_CAPABILITY = "version";
         internal const string SAUCE_DEVICE_CAPABILITY = "device";
         internal const string SAUCE_DEVICE_NAME_CAPABILITY = "deviceName";
-        internal const string SAUCE_DEVICE_ORIENTATION_CAPABILITY = "device-orientation";
+        internal const string SAUCE_DEVICE_ORIENTATION_CAPABILITY = "deviceOrientation";
         internal const string SAUCE_NATIVE_APP_CAPABILITY = "app";
         internal const string SAUCE_VUOP_CAPABILITY = "videoUploadOnPass";
         
@@ -143,7 +143,7 @@
     }
 }
 /*
- * Copyright Andrew Gray, Full Circle Solutions
+ * Copyright Andrew Gray, SauceForge
  * Date: 12th July 2014
  * 
  */

@@ -3,7 +3,7 @@
         //ACTIVATION DETAILS
         internal const string MY_USERNAME = "saucefauge";
         internal static readonly string MY_USERNAME_LOWER = MY_USERNAME.ToLower();
-        internal const string COMPANYNAME = "Full Circle Solutions";
+        internal const string COMPANYNAME = "SauceForge";
         internal const string EDITION = "Enterprise";
         internal const string KEYNAME = "SauceryKey";
         internal const string REGISTRYROOT = @"SOFTWARE\" + COMPANYNAME + BACKSLASH;
@@ -126,7 +126,7 @@
     }
 }
 /*
- * Copyright Andrew Gray, Full Circle Solutions
+ * Copyright Andrew Gray, SauceForge
  * Date: 12th July 2014
  * 
  */

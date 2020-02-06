@@ -74,7 +74,7 @@ namespace Saucery3.Capabilities {
     }
 }
 /*
- * Copyright Andrew Gray, Full Circle Solutions
+ * Copyright Andrew Gray, SauceForge
  * Date: 18th September 2014
  * 
  */
