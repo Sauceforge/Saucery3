@@ -6,7 +6,7 @@ using Saucery3.Util;
 namespace Saucery3.Options {
     internal static class OptionExtensions {
         public static bool CanUseAppium(this SaucePlatform platform) {
-            if (platform.IsAnAndroidDevice()) { Console.WriteLine("CanUseAppium: BrowserVersion: {0}", platform.ParseBrowserVersion()); }
+            if (platform.IsAnAndroidDevice()) { Console.WriteLine("CanUseAppium: Platform {0}; BrowserVersion: {1}", platform.Platform, platform.ParseBrowserVersion()); }
             return (IsAnAppleDevice(platform) &&
                     platform.ParseBrowserVersion() >= SauceryConstants.APPIUM_IOS_MINIMUM_VERSION) ||
                    (IsAnAndroidDevice(platform) &&
