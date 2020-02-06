@@ -31,7 +31,7 @@ namespace Saucery3.Capabilities.ConcreteProducts {
                               SauceryConstants.SAUCE_DEVICE_NAME_CAPABILITY, platform.LongName,
                               SauceryConstants.SAUCE_DEVICE_ORIENTATION_CAPABILITY, platform.DeviceOrientation,
                               SauceryConstants.SAUCE_BROWSER_NAME_CAPABILITY, SauceryConstants.CHROME_BROWSER,
-                              SauceryConstants.SAUCE_PLATFORM_VERSION_CAPABILITY, platform.LongVersion,
+                              SauceryConstants.SAUCE_PLATFORM_VERSION_CAPABILITY, platform.SanitisedLongVersion(),
                               SauceryConstants.SAUCE_PLATFORM_NAME_CAPABILITY, SauceryConstants.ANDROID);
 
             AddSauceLabsCapabilities(nativeApp);
