@@ -50,6 +50,13 @@ namespace Saucery3.Options {
                 : MobileTestName(shortTestName, platform);
         }
 
+        public static string SanitisedLongVersion(this SaucePlatform platform)
+        {
+            return platform.LongVersion.EndsWith(SauceryConstants.DOT)
+                    ? platform.LongVersion.Trim()
+                    : platform.LongVersion.Trim().Remove(platform.LongVersion.Length - 1);
+        }
+
         private static string DesktopTestName(StringBuilder shortTestName, SaucePlatform platform) {
             return AppendPlatformField(
                 AppendPlatformField(AppendPlatformField(shortTestName, platform.Os), platform.Browser),

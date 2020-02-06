@@ -37,14 +37,6 @@ namespace Saucery3.Options.Base
             return Opts;
         }
 
-        protected static string GetBrowser(string nativeApp, bool useChromeOnAndroid) {
-            return nativeApp != null
-                ? ""
-                : useChromeOnAndroid
-                    ? SauceryConstants.CHROME_BROWSER
-                    : SauceryConstants.DEFAULT_ANDROID_BROWSER;
-        }
-
         protected static string GetBrowser(string nativeApp) {
             return nativeApp != null ? "" : SauceryConstants.SAFARI_BROWSER;
         }

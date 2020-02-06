@@ -26,7 +26,7 @@
         //CAPABILITIES
         //internal const string RESOLUTION_CAPABILITY = "resolution";
         //internal const string SCREENRESOLUTION_CAPABILITY = "screen-resolution";
-        internal const string SAUCE_APPIUM_VERSION_CAPABILITY = "appium-version";
+        internal const string SAUCE_APPIUM_VERSION_CAPABILITY = "appiumVersion";
         //internal const string APPIUM_VERSION = "1.4.13";
         internal const double APPIUM_IOS_MINIMUM_VERSION = 6.1;
         internal const double APPIUM_ANDROID_MINIMUM_VERSION = 4.4;
@@ -82,10 +82,9 @@
         internal const string SAMSUNG = "Samsung";
         internal const string APPLE_IPHONE = "iphone";
         internal const string APPLE_IPAD = "ipad";
-        internal const string ANDROID = "android";
+        internal const string ANDROID = "Android";
         internal const string SAFARI_BROWSER = "Safari";
-        internal const string CHROME_BROWSER = "chrome";
-        internal const string DEFAULT_ANDROID_BROWSER = "browser";
+        internal const string CHROME_BROWSER = "Chrome";
         internal const string IPAD_SIMULATOR = "iPad Simulator";
         internal const string IPHONE_SIMULATOR = "iPhone Simulator";
         internal const string IPAD_DEVICE = "iPad";

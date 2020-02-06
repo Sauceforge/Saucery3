@@ -19,14 +19,19 @@ namespace Saucery3.Options.ConcreteProducts
             //See https://github.com/appium/appium-dotnet-driver/wiki/Android-Sample
             //AndroidDriver<AppiumWebElement> ad = new AndroidDriver<AppiumWebElement>(Caps);
 
-            Opts.AddAdditionalCapability(SauceryConstants.SAUCE_APPIUM_VERSION_CAPABILITY, Enviro.RecommendedAppiumVersion);
+            //Opts.AddAdditionalCapability(SauceryConstants.SAUCE_APPIUM_VERSION_CAPABILITY, Enviro.RecommendedAppiumVersion);
             Opts.AddAdditionalCapability(SauceryConstants.SAUCE_DEVICE_NAME_CAPABILITY, platform.LongName);
             Opts.AddAdditionalCapability(SauceryConstants.SAUCE_DEVICE_ORIENTATION_CAPABILITY, platform.DeviceOrientation);
-            Opts.AddAdditionalCapability(SauceryConstants.SAUCE_BROWSER_NAME_CAPABILITY, GetBrowser(nativeApp, useChromeOnAndroid));
-            //Opts.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, platform.LongVersion);
-            //Opts.AddAdditionalCapability(MobileCapabilityType.PlatformName, SauceryConstants.ANDROID);
-            Opts.AddAdditionalCapability(SauceryConstants.SAUCE_PLATFORM_VERSION_CAPABILITY, platform.LongVersion);
+            Opts.AddAdditionalCapability(SauceryConstants.SAUCE_BROWSER_NAME_CAPABILITY, SauceryConstants.CHROME_BROWSER);
+            Opts.AddAdditionalCapability(SauceryConstants.SAUCE_PLATFORM_VERSION_CAPABILITY, platform.SanitisedLongVersion());
             Opts.AddAdditionalCapability(SauceryConstants.SAUCE_PLATFORM_NAME_CAPABILITY, SauceryConstants.ANDROID);
+
+            Console.WriteLine("{0}:{1}\n{2}:{3}\n{4}:{5}\n{6}:{7}\n{8}:{9}",
+                              SauceryConstants.SAUCE_DEVICE_NAME_CAPABILITY, platform.LongName,
+                              SauceryConstants.SAUCE_DEVICE_ORIENTATION_CAPABILITY, platform.DeviceOrientation,
+                              SauceryConstants.SAUCE_BROWSER_NAME_CAPABILITY, SauceryConstants.CHROME_BROWSER,
+                              SauceryConstants.SAUCE_PLATFORM_VERSION_CAPABILITY, platform.LongVersion,
+                              SauceryConstants.SAUCE_PLATFORM_NAME_CAPABILITY, SauceryConstants.ANDROID);
             
             AddSauceLabsOptions(nativeApp);
         }

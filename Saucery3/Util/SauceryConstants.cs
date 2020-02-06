@@ -26,7 +26,6 @@
         //CAPABILITIES
         //internal const string RESOLUTION_CAPABILITY = "resolution";
         //internal const string SCREENRESOLUTION_CAPABILITY = "screen-resolution";
-        //internal const string SAUCE_APPIUM_VERSION_CAPABILITY = "appium-version";
         internal const string SAUCE_APPIUM_VERSION_CAPABILITY = "appiumVersion";
         //internal const string APPIUM_VERSION = "1.4.13";
         internal const double APPIUM_IOS_MINIMUM_VERSION = 6.1;
@@ -42,7 +41,6 @@
         internal const string SAUCE_VERSION_CAPABILITY = "version";
         internal const string SAUCE_DEVICE_CAPABILITY = "device";
         internal const string SAUCE_DEVICE_NAME_CAPABILITY = "deviceName";
-        //internal const string SAUCE_DEVICE_ORIENTATION_CAPABILITY = "device-orientation";
         internal const string SAUCE_DEVICE_ORIENTATION_CAPABILITY = "deviceOrientation";
         internal const string SAUCE_NATIVE_APP_CAPABILITY = "app";
         internal const string SAUCE_VUOP_CAPABILITY = "videoUploadOnPass";
@@ -86,10 +84,9 @@
         internal const string SAMSUNG = "Samsung";
         internal const string APPLE_IPHONE = "iphone";
         internal const string APPLE_IPAD = "ipad";
-        internal const string ANDROID = "android";
+        internal const string ANDROID = "Android";
         internal const string SAFARI_BROWSER = "Safari";
-        internal const string CHROME_BROWSER = "chrome";
-        internal const string DEFAULT_ANDROID_BROWSER = "browser";
+        internal const string CHROME_BROWSER = "Chrome";
         internal const string IPAD_SIMULATOR = "iPad Simulator";
         internal const string IPHONE_SIMULATOR = "iPhone Simulator";
         internal const string IPAD_DEVICE = "iPad";
@@ -100,6 +97,7 @@
         internal const string PASSED = "passed";
         internal const string FAILED = "failed";
         internal const string NULL_STRING = "null";
+        internal const string DOT = ".";
         internal const string SPACE = " ";
         internal const string TWO_SPACES = "  ";
         internal const string ASTERIX = "*";
