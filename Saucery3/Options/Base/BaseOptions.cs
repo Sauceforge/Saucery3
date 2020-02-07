@@ -33,9 +33,9 @@ namespace Saucery3.Options.Base
             return Opts;
         }
 
-        protected static string GetBrowser(string nativeApp) {
-            return nativeApp != null ? "" : SauceryConstants.SAFARI_BROWSER;
-        }
+        //protected static string GetBrowser(string nativeApp) {
+        //    return nativeApp != null ? "" : SauceryConstants.SAFARI_BROWSER;
+        //}
     }
 }
 /*
