@@ -52,20 +52,26 @@ namespace Saucery3.Options {
 
         public static string SanitisedLongVersion(this SaucePlatform platform)
         {
-            return platform.LongVersion.EndsWith(SauceryConstants.DOT)
-                    ? platform.LongVersion.Trim()
-                    : platform.LongVersion.Trim().Remove(platform.LongVersion.Length - 1);
+            var result = platform.LongVersion.EndsWith(SauceryConstants.DOT)
+                            ? platform.LongVersion.Trim()
+                            : platform.LongVersion.Trim().Remove(platform.LongVersion.Length - 1);
+            Console.WriteLine("SanitisedLongVersion returning string '{0}'", result);
+            return result;
+            //return platform.LongVersion.EndsWith(SauceryConstants.DOT)
+            //        ? platform.LongVersion.Trim()
+            //        : platform.LongVersion.Trim().Remove(platform.LongVersion.Length - 1);
         }
 
         private static string DesktopTestName(StringBuilder shortTestName, SaucePlatform platform) {
-            return AppendPlatformField(
-                AppendPlatformField(AppendPlatformField(shortTestName, platform.Os), platform.Browser),
-                platform.BrowserVersion).ToString();
+            return AppendPlatformField(AppendPlatformField(AppendPlatformField(shortTestName, platform.Os), 
+                                                           platform.Browser),
+                                       platform.BrowserVersion).ToString();
         }
 
         private static string MobileTestName(StringBuilder shortTestName, SaucePlatform platform) {
-            return AppendPlatformField(AppendPlatformField(AppendPlatformField(shortTestName, platform.LongName), platform.BrowserVersion),
-                platform.DeviceOrientation).ToString();
+            return AppendPlatformField(AppendPlatformField(AppendPlatformField(shortTestName, platform.LongName), 
+                                                           platform.BrowserVersion),
+                                       platform.DeviceOrientation).ToString();
         }
 
         private static StringBuilder AppendPlatformField(this StringBuilder testName, string fieldToAdd) {
