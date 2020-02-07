@@ -6,6 +6,7 @@ using UnitTests.RestAPI.FlowControl;
 using UnitTests.RestAPI.RecommendedAppiumVersion;
 
 namespace UnitTests {
+    [TestFixture]
     public class RestTests {
         static RestTests() {
             //Console.WriteLine(@"In RestTests static");

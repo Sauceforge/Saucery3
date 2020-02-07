@@ -95,6 +95,7 @@
         internal const string PASSED = "passed";
         internal const string FAILED = "failed";
         internal const string NULL_STRING = "null";
+        internal const string DOT = ".";
         internal const string SPACE = " ";
         internal const string ASTERIX = "*";
         internal const char SPACE_CHAR = ' ';

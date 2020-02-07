@@ -3,7 +3,9 @@ using NUnit.Framework.Interfaces;
 using UnitTests.Issue1118;
 
 namespace UnitTests {
+    [TestFixture]
     public class TestFixtureSourceTests {
+        
         [Test]
         public void Issue1118() {
             var suite = TestBuilder.MakeFixture(typeof(Issue1118_Fixture));

@@ -53,13 +53,13 @@ namespace Saucery3.Options {
         public static string SanitisedLongVersion(this SaucePlatform platform)
         {
             var result = platform.LongVersion.EndsWith(SauceryConstants.DOT)
-                            ? platform.LongVersion.Trim()
-                            : platform.LongVersion.Trim().Remove(platform.LongVersion.Length - 2);
+                            ? platform.LongVersion.Trim().Remove(platform.LongVersion.Length - 1)
+                            : platform.LongVersion.Trim();
             Console.WriteLine("SanitisedLongVersion returning string '{0}'", result);
             return result;
             //return platform.LongVersion.EndsWith(SauceryConstants.DOT)
-            //        ? platform.LongVersion.Trim()
-            //        : platform.LongVersion.Trim().Remove(platform.LongVersion.Length - 1);
+            //        ? platform.LongVersion.Trim().Remove(platform.LongVersion.Length - 1)
+            //        : platform.LongVersion.Trim();
         }
 
         private static string DesktopTestName(StringBuilder shortTestName, SaucePlatform platform) {
