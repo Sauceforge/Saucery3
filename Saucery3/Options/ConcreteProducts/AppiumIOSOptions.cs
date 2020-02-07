@@ -8,7 +8,6 @@ namespace Saucery3.Options.ConcreteProducts {
     internal class AppiumIOSOptions : BaseOptions {
         public AppiumIOSOptions(SaucePlatform platform, string testName) : base(testName) {
             var nativeApp = Enviro.SauceNativeApp;
-            //Console.WriteLine(SauceryConstants.SETTING_UP_APPIUM, testName, SauceryConstants.IOS_ON_APPIUM, Enviro.RecommendedAppiumVersion);
             Console.WriteLine(SauceryConstants.SETTING_UP, testName, SauceryConstants.IOS_ON_APPIUM);
             Opts = new AppiumOptions();
 
