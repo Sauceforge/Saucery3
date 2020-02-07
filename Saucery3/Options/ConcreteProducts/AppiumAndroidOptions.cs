@@ -3,7 +3,6 @@ using OpenQA.Selenium.Appium;
 using Saucery3.Options.Base;
 using Saucery3.OnDemand;
 using Saucery3.Util;
-using OpenQA.Selenium.Appium.Enums;
 
 namespace Saucery3.Options.ConcreteProducts
 {

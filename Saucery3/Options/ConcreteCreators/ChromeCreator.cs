@@ -3,9 +3,9 @@ using Saucery3.Options.ConcreteProducts;
 using Saucery3.OnDemand;
 
 namespace Saucery3.Options.ConcreteCreators {
-    internal class DesktopCreator : Creator {
+    internal class ChromeCreator : Creator {
         public override BaseOptions Create(SaucePlatform platform, string testName) {
-            return new DesktopOptions(platform, testName);
+            return new ChromeBrowserOptions(platform, testName);
         }
     }
 }
