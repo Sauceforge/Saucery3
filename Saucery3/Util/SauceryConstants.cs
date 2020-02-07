@@ -44,6 +44,7 @@
         internal const string SAUCE_DEVICE_ORIENTATION_CAPABILITY = "deviceOrientation";
         internal const string SAUCE_NATIVE_APP_CAPABILITY = "app";
         internal const string SAUCE_VUOP_CAPABILITY = "videoUploadOnPass";
+        internal const string SAUCE_OPTIONS_CAPABILITY = "sauce:options";
         
         //SAUCE ENVIRONMENT VARIABLES
         internal const string SAUCE_USER_NAME = "SAUCE_USER_NAME";

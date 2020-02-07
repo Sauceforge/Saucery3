@@ -14,13 +14,13 @@ namespace Saucery3.Options.ConcreteProducts {
             Console.WriteLine("platform.Os: {0}", platform.Os);
             Console.WriteLine("platform.BrowserVersion: {0}", platform.BrowserVersion);
 
-            Console.WriteLine("Creating Chrome Options");
+            Console.WriteLine("Creating Edge Options");
             var o = new EdgeOptions
             {
                 PlatformName = platform.Os,
                 BrowserVersion = platform.BrowserVersion
             };
-            o.AddAdditionalCapability("sauce:options", SauceOptions);
+            o.AddAdditionalCapability(SauceryConstants.SAUCE_OPTIONS_CAPABILITY, SauceOptions);
             Opts = o;
         }
     }
