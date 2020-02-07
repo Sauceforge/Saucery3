@@ -54,7 +54,7 @@ namespace Saucery3.Options {
         {
             var result = platform.LongVersion.EndsWith(SauceryConstants.DOT)
                             ? platform.LongVersion.Trim()
-                            : platform.LongVersion.Trim().Remove(platform.LongVersion.Length - 1);
+                            : platform.LongVersion.Trim().Remove(platform.LongVersion.Length - 2);
             Console.WriteLine("SanitisedLongVersion returning string '{0}'", result);
             return result;
             //return platform.LongVersion.EndsWith(SauceryConstants.DOT)

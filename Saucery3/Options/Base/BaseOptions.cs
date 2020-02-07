@@ -12,10 +12,6 @@ namespace Saucery3.Options.Base
         protected BaseOptions(string testName) {
             _testName = testName;
             SauceOptions = new Dictionary<string, object>();
-            AddSauceLabsOptions();
-        }
-
-        protected void AddSauceLabsOptions() {
             SauceOptions.Add(SauceryConstants.SAUCE_USERNAME_CAPABILITY, Enviro.SauceUserName);
             SauceOptions.Add(SauceryConstants.SAUCE_ACCESSKEY_CAPABILITY, Enviro.SauceApiKey);
             //This sets the Session column
