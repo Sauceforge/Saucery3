@@ -26,7 +26,7 @@ namespace Saucery3.Options
 
         private static DriverOptions GetDesktopOptions(SaucePlatform platform, string testName)
         {
-            switch (platform.Browser)
+            switch (platform.Browser.ToLower())
             {
                 case "firefox":
                     return new FirefoxCreator().Create(platform, testName).GetOpts();
