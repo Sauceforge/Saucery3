@@ -10,9 +10,7 @@ namespace Saucery3.Options.ConcreteProducts {
         {
             Console.WriteLine(SauceryConstants.SETTING_UP, testName, SauceryConstants.DESKTOP_ON_WEBDRIVER);
 
-            Console.WriteLine("platform.Browser: {0}", platform.Browser);
-            Console.WriteLine("platform.Os: {0}", platform.Os);
-            Console.WriteLine("platform.BrowserVersion: {0}", platform.BrowserVersion);
+            DebugMessages.PrintDesktopOptionValues(platform);
 
             Console.WriteLine("Creating Chrome Options");
             var o = new ChromeOptions
