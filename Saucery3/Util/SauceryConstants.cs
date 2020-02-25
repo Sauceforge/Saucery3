@@ -29,7 +29,8 @@
         internal const string SAUCE_APPIUM_VERSION_CAPABILITY = "appiumVersion";
         internal const string SELENIUM_VERSION_CAPABILITY = "seleniumVersion";
         //internal const string APPIUM_VERSION = "1.4.13";
-        internal const string LATEST_SELENIUM_VERSION = "3.141.0";
+        //internal const string LATEST_SELENIUM_VERSION = "3.141.0";
+        internal const string LATEST_SELENIUM_VERSION = "latest";
         internal const double APPIUM_IOS_MINIMUM_VERSION = 6.1;
         internal const double APPIUM_ANDROID_MINIMUM_VERSION = 4.4;
         internal const string SAUCE_SESSIONNAME_CAPABILITY = "name";
