@@ -1,20 +1,26 @@
 ﻿using OpenQA.Selenium;
 using Saucery3.OnDemand;
 using Saucery3.Options.ConcreteCreators;
-using Saucery3.Util;
-using System;
 
 namespace Saucery3.Options
 {
-    internal class OptionFactory {
-        public static DriverOptions CreateOptions(SaucePlatform platform, string testName) {
-            if (platform.IsADesktopPlatform()) {
-                return GetDesktopOptions(platform, testName);
+    public class OptionFactory
+    {
+        private SaucePlatform Platform { get; set; }
+
+        public OptionFactory(SaucePlatform platform)
+        {
+            Platform = platform;
+        }
+
+        public DriverOptions CreateOptions(string testName) {
+            if (Platform.IsADesktopPlatform()) {
+                return GetDesktopOptions(Platform, testName);
             }
             //Mobile Platform
-            return platform.IsAnAppleDevice()
-                    ? new AppiumIOSCreator().Create(platform, testName).GetOpts()
-                    : new AppiumAndroidCreator().Create(platform, testName).GetOpts();
+            return Platform.IsAnAppleDevice()
+                    ? new AppiumIOSCreator().Create(Platform, testName).GetOpts()
+                    : new AppiumAndroidCreator().Create(Platform, testName).GetOpts();
             //return platform.CanUseAppium()
             //    //Mobile Platform
             //    ? platform.IsAnAppleDevice()
@@ -31,42 +37,36 @@ namespace Saucery3.Options
             switch (platform.Browser.ToLower())
             {
                 case "firefox":
-                    if (!platform.BrowserVersion.FirefoxVersionIsSupported())
-                    {
-                        Console.WriteLine(SauceryConstants.NOT_SUPPORTED_MESSAGE);
-                        return null;
-                    }
                     return new FirefoxCreator().Create(platform, testName).GetOpts();
                 case "internet explorer":
-                    if (!platform.BrowserVersion.IEVersionIsSupported())
-                    {
-                        Console.WriteLine(SauceryConstants.NOT_SUPPORTED_MESSAGE);
-                        return null;
-                    }
                     return new IECreator().Create(platform, testName).GetOpts();
                 case "microsoftedge":
                     return new EdgeCreator().Create(platform, testName).GetOpts();
                 case "chrome":
-                    if (!platform.BrowserVersion.ChromeVersionIsSupported())
-                    {
-                        Console.WriteLine(SauceryConstants.NOT_SUPPORTED_MESSAGE);
-                        return null;
-                    }
                     return new ChromeCreator().Create(platform, testName).GetOpts();
                 case "safari":
-                    if (!platform.BrowserVersion.SafariVersionIsSupported())
-                    {
-                        Console.WriteLine(SauceryConstants.NOT_SUPPORTED_MESSAGE);
-                        return null;
-                    }
                     return new SafariCreator().Create(platform, testName).GetOpts();
                 default:
-                    if (!platform.BrowserVersion.ChromeVersionIsSupported())
-                    {
-                        Console.WriteLine(SauceryConstants.NOT_SUPPORTED_MESSAGE);
-                        return null;
-                    }
                     return new ChromeCreator().Create(platform, testName).GetOpts();
+            }
+        }
+
+        public bool IsSupportedPlatform()
+        {
+            switch (Platform.Browser.ToLower())
+            {
+                case "firefox":
+                    return Platform.FirefoxVersionIsSupported();
+                case "internet explorer":
+                    return Platform.IEVersionIsSupported();
+                case "microsoftedge":
+                    return true;
+                case "chrome":
+                    return Platform.ChromeVersionIsSupported();
+                case "safari":
+                    return Platform.SafariVersionIsSupported();
+                default:
+                    return false;
             }
         }
     }

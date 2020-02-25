@@ -8,6 +8,7 @@ using Saucery3.RestAPI.FlowControl;
 using Saucery3.RestAPI.RecommendedAppiumVersion;
 using Saucery3.RestAPI.TestStatus;
 using Saucery3.Util;
+using System;
 using System.Collections.Generic;
 
 namespace Saucery3.Tests
@@ -41,10 +42,14 @@ namespace Saucery3.Tests
 
             //DebugMessages.PrintPlatformDetails(platform);
             // set up the desired capabilities
-            var opts = OptionFactory.CreateOptions(Platform, TestName);
-            if (opts != null)
+            var factory = new OptionFactory(Platform);
+            if (factory.IsSupportedPlatform())
             {
+                var opts = factory.CreateOptions(TestName);
                 InitialiseDriver(opts, 30);
+            } else
+            {
+                Console.WriteLine(SauceryConstants.NOT_SUPPORTED_MESSAGE);
             }
         }
 
