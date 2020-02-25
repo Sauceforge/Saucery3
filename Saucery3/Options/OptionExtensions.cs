@@ -62,6 +62,26 @@ namespace Saucery3.Options {
             //        : platform.LongVersion.Trim();
         }
 
+        public static bool FirefoxVersionIsSupported(this string browserVersion)
+        {
+            return int.Parse(browserVersion) >= SauceryConstants.FIREFOX_SUPPORTED_VERSION;
+        }
+
+        public static bool IEVersionIsSupported(this string browserVersion)
+        {
+            return int.Parse(browserVersion) >= SauceryConstants.IE_SUPPORTED_VERSION;
+        }
+
+        public static bool SafariVersionIsSupported(this string browserVersion)
+        {
+            return int.Parse(browserVersion) >= SauceryConstants.SAFARI_SUPPORTED_VERSION;
+        }
+
+        public static bool ChromeVersionIsSupported(this string browserVersion)
+        {
+            return int.Parse(browserVersion) >= SauceryConstants.CHROME_SUPPORTED_VERSION;
+        }
+
         private static string DesktopTestName(StringBuilder shortTestName, SaucePlatform platform) {
             return AppendPlatformField(AppendPlatformField(AppendPlatformField(shortTestName, platform.Os), 
                                                            platform.Browser),

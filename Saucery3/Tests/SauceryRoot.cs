@@ -42,10 +42,10 @@ namespace Saucery3.Tests
             //DebugMessages.PrintPlatformDetails(platform);
             // set up the desired capabilities
             var opts = OptionFactory.CreateOptions(Platform, TestName);
-
-            if(opts == null) { System.Console.WriteLine("opts object is null"); }
-            
-            InitialiseDriver(opts, 30);
+            if (opts != null)
+            {
+                InitialiseDriver(opts, 30);
+            }
         }
 
         public abstract void InitialiseDriver(DriverOptions opts, int waitSecs);

@@ -141,6 +141,13 @@
         internal const string VISIBILITY_SHARE = "share";
         internal const string VISIBILITY_TEAM = "team";
         internal const string VISIBILITY_PRIVATE = "private";
+
+        //OPTIONS BROWSER SUPPORT
+        internal const int SAFARI_SUPPORTED_VERSION = 11;
+        internal const int FIREFOX_SUPPORTED_VERSION = 53;
+        internal const int CHROME_SUPPORTED_VERSION = 61;
+        internal const int IE_SUPPORTED_VERSION = 11;
+        internal const string NOT_SUPPORTED_MESSAGE = "Browser version not supported by DriverOptions. Please see: https://wiki.saucelabs.com/display/DOCS/2018/03/27/Introducing+Selenium+WebDriver+W3C+Protocol+Beta.";
     }
 }
 /*
