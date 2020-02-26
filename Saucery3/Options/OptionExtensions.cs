@@ -64,22 +64,30 @@ namespace Saucery3.Options {
 
         public static bool FirefoxVersionIsSupported(this SaucePlatform Platform)
         {
-            return Platform.ParseBrowserVersion() >= SauceryConstants.FIREFOX_SUPPORTED_VERSION;
+            return Platform.BrowserVersion.Equals("latest") 
+                ? true 
+                : Platform.ParseBrowserVersion() >= SauceryConstants.FIREFOX_SUPPORTED_VERSION;
         }
 
         public static bool IEVersionIsSupported(this SaucePlatform Platform)
         {
-            return Platform.ParseBrowserVersion() >= SauceryConstants.IE_SUPPORTED_VERSION;
+            return Platform.BrowserVersion.Equals("latest")
+                ? true
+                : Platform.ParseBrowserVersion() >= SauceryConstants.IE_SUPPORTED_VERSION;
         }
 
         public static bool SafariVersionIsSupported(this SaucePlatform Platform)
         {
-            return Platform.ParseBrowserVersion() >= SauceryConstants.SAFARI_SUPPORTED_VERSION;
+            return Platform.BrowserVersion.Equals("latest")
+                ? true
+                : Platform.ParseBrowserVersion() >= SauceryConstants.SAFARI_SUPPORTED_VERSION;
         }
 
         public static bool ChromeVersionIsSupported(this SaucePlatform Platform)
         {
-            return Platform.ParseBrowserVersion() >= SauceryConstants.CHROME_SUPPORTED_VERSION;
+            return Platform.BrowserVersion.Equals("latest")
+                ? true
+                : Platform.ParseBrowserVersion() >= SauceryConstants.CHROME_SUPPORTED_VERSION;
         }
 
         private static string DesktopTestName(StringBuilder shortTestName, SaucePlatform platform) {
