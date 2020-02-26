@@ -19,6 +19,33 @@ namespace Saucery3.Util {
             }
         }
 
+        internal static void PrintHaveDesktopPlatform()
+        {
+            if (UserChecker.ItIsMe())
+            {
+                Console.WriteLine("DEBUG MESSAGE: We have a desktop platform");
+                Console.Out.Flush();
+            }
+        }
+
+        internal static void PrintHaveAndroidPlatform()
+        {
+            if (UserChecker.ItIsMe())
+            {
+                Console.WriteLine("DEBUG MESSAGE: We have an Android platform");
+                Console.Out.Flush();
+            }
+        }
+
+        internal static void PrintHaveApplePlatform()
+        {
+            if (UserChecker.ItIsMe())
+            {
+                Console.WriteLine("DEBUG MESSAGE: We have an Apple platform");
+                Console.Out.Flush();
+            }
+        }
+
         public static void ExtractJsonSegment(string json, int startIndex, int endIndex) {
             if (UserChecker.ItIsMe())
             {
@@ -31,9 +58,9 @@ namespace Saucery3.Util {
         {
             if (UserChecker.ItIsMe())
             {
-                Console.WriteLine("platform.Browser: {0}", platform.Browser);
-                Console.WriteLine("platform.Os: {0}", platform.Os);
-                Console.WriteLine("platform.BrowserVersion: {0}", platform.BrowserVersion);
+                Console.WriteLine("Desktop platform.Browser: {0}", platform.Browser);
+                Console.WriteLine("Desktop platform.Os: {0}", platform.Os);
+                Console.WriteLine("Desktop platform.BrowserVersion: {0}", platform.BrowserVersion);
             }
         }
 

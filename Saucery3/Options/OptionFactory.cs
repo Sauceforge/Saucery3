@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using Saucery3.OnDemand;
 using Saucery3.Options.ConcreteCreators;
+using Saucery3.Util;
 
 namespace Saucery3.Options
 {
@@ -15,12 +16,20 @@ namespace Saucery3.Options
 
         public DriverOptions CreateOptions(string testName) {
             if (Platform.IsADesktopPlatform()) {
+                DebugMessages.PrintHaveDesktopPlatform();
                 return GetDesktopOptions(Platform, testName);
             }
             //Mobile Platform
-            return Platform.IsAnAppleDevice()
-                    ? new AppiumIOSCreator().Create(Platform, testName).GetOpts()
-                    : new AppiumAndroidCreator().Create(Platform, testName).GetOpts();
+            if (Platform.IsAnAppleDevice())
+            {
+                DebugMessages.PrintHaveApplePlatform();
+                return new AppiumIOSCreator().Create(Platform, testName).GetOpts();
+            }
+            else
+            {
+                DebugMessages.PrintHaveAndroidPlatform();
+                return new AppiumAndroidCreator().Create(Platform, testName).GetOpts();
+            }
             //return platform.CanUseAppium()
             //    //Mobile Platform
             //    ? platform.IsAnAppleDevice()
