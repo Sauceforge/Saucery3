@@ -53,6 +53,18 @@ namespace Saucery3.Options
 
         public bool IsSupportedPlatform()
         {
+            if (Platform.IsAnAndroidDevice())
+            {
+                return true;
+            } 
+            else
+            {
+                if (Platform.IsAnAppleDevice())
+                {
+                    return true;
+                }
+            }
+
             switch (Platform.Browser.ToLower())
             {
                 case "firefox":

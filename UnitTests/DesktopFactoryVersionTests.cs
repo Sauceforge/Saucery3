@@ -7,9 +7,9 @@ using System.Collections;
 namespace UnitTests
 {
     [TestFixture]
-    public class FactoryVersionTests
+    public class DesktopFactoryVersionTests
     {
-        [Test, TestCaseSource(typeof(DataClass), "SupportedTestCases")]
+        [Test, TestCaseSource(typeof(DesktopDataClass), "SupportedTestCases")]
         public void IsSupportedPlatformTest(SaucePlatform saucePlatform)
         {
             var factory = new OptionFactory(saucePlatform);
@@ -17,7 +17,7 @@ namespace UnitTests
             result.ShouldBeTrue();
         }
 
-        [Test, TestCaseSource(typeof(DataClass), "NotSupportedTestCases")]
+        [Test, TestCaseSource(typeof(DesktopDataClass), "NotSupportedTestCases")]
         public void IsNotSupportedPlatformTest(SaucePlatform saucePlatform)
         {
             var factory = new OptionFactory(saucePlatform);
@@ -25,7 +25,7 @@ namespace UnitTests
             result.ShouldBeFalse();
         }
 
-        [Test, TestCaseSource(typeof(DataClass), "SupportedTestCases")]
+        [Test, TestCaseSource(typeof(DesktopDataClass), "SupportedTestCases")]
         public void DesktopOptionTest(SaucePlatform saucePlatform)
         {
             var factory = new OptionFactory(saucePlatform);
@@ -33,7 +33,7 @@ namespace UnitTests
             opts.ShouldNotBeNull();
         }
     }
-    public class DataClass
+    public class DesktopDataClass
     {
         public static IEnumerable SupportedTestCases
         {

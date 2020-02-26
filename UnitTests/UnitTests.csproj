@@ -66,7 +66,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConversionTests.cs" />
-    <Compile Include="FactoryVersionTests.cs" />
+    <Compile Include="AndroidFactoryVersionTests.cs" />
+    <Compile Include="DesktopFactoryVersionTests.cs" />
     <Compile Include="Enviro.cs" />
     <Compile Include="Issue1118\Issue1118Root.cs" />
     <Compile Include="Issue1118\Issue1118_Base.cs" />

@@ -83,6 +83,11 @@ namespace Saucery3.Options {
                 : Platform.ParseBrowserVersion() >= SauceryConstants.SAFARI_SUPPORTED_VERSION;
         }
 
+        public static bool AndroidVersionIsSupported(this SaucePlatform Platform)
+        {
+            return true;
+        }
+
         public static bool ChromeVersionIsSupported(this SaucePlatform Platform)
         {
             return Platform.BrowserVersion.Equals("latest")
