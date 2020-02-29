@@ -14,6 +14,7 @@ namespace Saucery3.Capabilities.Base
         protected void AddSauceLabsCapabilities() {
             Caps.SetCapability(SauceryConstants.SAUCE_USERNAME_CAPABILITY, Enviro.SauceUserName);
             Caps.SetCapability(SauceryConstants.SAUCE_ACCESSKEY_CAPABILITY, Enviro.SauceApiKey);
+            Caps.SetCapability(SauceryConstants.SELENIUM_VERSION_CAPABILITY, SauceryConstants.LATEST_SELENIUM_VERSION);
             //This sets the Session column
             Caps.SetCapability(SauceryConstants.SAUCE_SESSIONNAME_CAPABILITY, _testName);
             //This sets the Build column
