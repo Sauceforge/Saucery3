@@ -1,18 +1,27 @@
 name: pipeline
 
-on: [push]
- 
+on:
+  push:
+    branches:
+      - master
+
+env:
+  APP_NAME: Saucery3.sln               # set this to your application's name
+  CONFIG: Release
+  APP_PACKAGE_PATH: 'published'        # set this to the path to your web app project, defaults to the repository root
+
+      
 jobs:
   build:
     runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v1
-    - name: Setup Nuget.exe
+    - name: Setup Nuget
       uses: warrenbuckley/Setup-Nuget@v1
     - name: Restore packages
-      run: nuget restore Saucery3.sln
-    - name: Setup MSBuild.exe
+      run: nuget restore ${{ env.APP_NAME }}
+    - name: Setup MSBuild
       uses: warrenbuckley/Setup-MSBuild@v1
     - name: Build with MSBuild
-      run: msbuild  Saucery3.sln -p:Configuration=Release
+      run: msbuild  ${{ env.APP_NAME }} -p:Configuration=${{ env.CONFIG }}
