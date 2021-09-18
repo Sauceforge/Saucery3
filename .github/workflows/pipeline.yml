@@ -10,7 +10,6 @@ env:
   CONFIG: Release
   APP_PACKAGE_PATH: 'published'        # set this to the path to your web app project, defaults to the repository root
 
-      
 jobs:
   build:
     runs-on: windows-latest
@@ -19,8 +18,8 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v1
 
-    - name: Setup MSBuild Path
-      uses: warrenbuckley/Setup-MSBuild@v1
+    - name: Add MSBuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.3
 
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1.0.2
