@@ -1,4 +1,4 @@
-name: pipeline
+name: Build Pipeline
 
 on:
   push:
@@ -29,8 +29,3 @@ jobs:
 
     - name: Build App
       run: msbuild ${{ env.SOLN_FILE }} /p:Configuration=${{ env.CONFIG }}
-
-    #- name: Setup MSBuild
-    #  uses: warrenbuckley/Setup-MSBuild@v1
-    #- name: Build with MSBuild
-    #  run: msbuild  ${{ env.APP_NAME }} -p:Configuration=${{ env.CONFIG }}

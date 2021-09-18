@@ -1,5 +1,4 @@
 ﻿using System;
-using NuGet;
 using NUnit.Framework;
 using Shouldly;
 using UnitTests.RestAPI.FlowControl;

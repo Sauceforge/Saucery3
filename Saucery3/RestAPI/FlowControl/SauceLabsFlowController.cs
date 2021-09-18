@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using RestSharp;
 using Saucery3.RestAPI.FlowControl.Base;
 using Saucery3.Util;
 
@@ -25,7 +26,7 @@ namespace Saucery3.RestAPI.FlowControl {
 
             var jsonEndIndex = json.Length - 3;
             var remainingSection = ExtractJsonSegment(json, jsonStartIndex, jsonEndIndex);
-            var flowControl = SimpleJson.SimpleJson.DeserializeObject<FlowControl>(remainingSection);
+            var flowControl = SimpleJson.DeserializeObject<FlowControl>(remainingSection);
 
             return flowControl.remaining.overall <= 0;
         }
