@@ -17,11 +17,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
+    - name: Restore packages
     - uses: nuget/setup-nuget@v1
       #with:
       #  nuget-api-key: ${{ secrets.NuGetAPIKey }}
       #  nuget-version: '5.x'
-    - name: Restore packages
     - run: nuget restore ${{ env.SOLN_FILE }}
     
     #- name: Setup MSBuild
