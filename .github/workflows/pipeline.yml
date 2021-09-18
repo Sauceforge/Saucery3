@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  APP_NAME: Saucery3.sln               # set this to your application's name
+  SOLN_FILE: Saucery3.sln               # set this to your application's name
   CONFIG: Release
   APP_PACKAGE_PATH: 'published'        # set this to the path to your web app project, defaults to the repository root
 
@@ -16,12 +16,15 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Setup Nuget
-      uses: warrenbuckley/Setup-Nuget@v1
+    - uses: actions/checkout@master
+    - uses: nuget/setup-nuget@v1
+      #with:
+      #  nuget-api-key: ${{ secrets.NuGetAPIKey }}
+      #  nuget-version: '5.x'
     - name: Restore packages
-      run: nuget restore ${{ env.APP_NAME }}
-    - name: Setup MSBuild
-      uses: warrenbuckley/Setup-MSBuild@v1
-    - name: Build with MSBuild
-      run: msbuild  ${{ env.APP_NAME }} -p:Configuration=${{ env.CONFIG }}
+    - run: nuget restore ${{ env.SOLN_FILE }}
+    
+    #- name: Setup MSBuild
+    #  uses: warrenbuckley/Setup-MSBuild@v1
+    #- name: Build with MSBuild
+    #  run: msbuild  ${{ env.APP_NAME }} -p:Configuration=${{ env.CONFIG }}
