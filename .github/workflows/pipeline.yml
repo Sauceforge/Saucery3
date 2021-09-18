@@ -16,10 +16,21 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@master
-    - uses: nuget/setup-nuget@v1
-    - run: nuget restore ${{ env.SOLN_FILE }}
-    
+    - name: Checkout Code
+      uses: actions/checkout@v1
+
+    - name: Setup MSBuild Path
+      uses: warrenbuckley/Setup-MSBuild@v1
+
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.0.2
+      
+    - name: Restore NuGet Packages
+      run: nuget restore ${{ env.SOLN_FILE }}
+
+    - name: Build App
+      run: msbuild ${{ env.SOLN_FILE }} /p:Configuration=${{ env.CONFIG }}
+
     #- name: Setup MSBuild
     #  uses: warrenbuckley/Setup-MSBuild@v1
     #- name: Build with MSBuild
