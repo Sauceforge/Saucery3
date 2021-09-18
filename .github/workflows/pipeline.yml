@@ -11,21 +11,33 @@ env:
   APP_PACKAGE_PATH: 'published'        # set this to the path to your web app project, defaults to the repository root
 
 jobs:
-  build:
+  checkout:
     runs-on: windows-latest
-
+    
     steps:
     - name: Checkout Code
       uses: actions/checkout@v1
+  
+  setup:
+    runs-on: windows-latest
 
+    steps:
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.0.3
 
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1
-      
+
+  restore:
+    runs-on: windows-latest
+
+    steps:
     - name: Restore NuGet Packages
       run: nuget restore ${{ env.SOLN_FILE }}
 
+  build:
+    runs-on: windows-latest
+
+    steps:
     - name: Build App
       run: msbuild ${{ env.SOLN_FILE }} /p:Configuration=${{ env.CONFIG }}
